@@ -1,0 +1,97 @@
+/* Form parents setting */
+.newItemForm {
+  width: 100%;
+  max-width: 96rem;
+  display: flex;
+  flex-direction: column;
+  border: 0.1rem solid var(--light2);
+
+  padding: 20rem 2%;
+  margin-top: 20rem;
+  box-shadow: var(--shadowBox);
+}
+
+/* Info inputs */
+.itemInputs {
+  display: grid;
+  width: 100%;
+}
+/* Input and lable grupp */
+.itemInputs div {
+  display: flex;
+  gap: 5%;
+  width: 100%;
+  padding: 1rem;
+}
+.itemInputs div input {
+  width: 100%;
+  border: none;
+  background: var(--light2);
+  padding: 0.8rem;
+  border-radius: 0.5rem;
+  font-family: var(--fontJosefin);
+  font-size: medium;
+  color: var(--dark1);
+}
+.itemInputs div label {
+  width: 60%;
+  padding: 1rem 0%;
+  font-family: var(--fontJosefin);
+  font-size: medium;
+  color: var(--dark3);
+}
+/* TextArea */
+.textInputArea {
+  width: 100%;
+  padding: 2rem 0%;
+}
+.textInputArea textarea {
+  width: 100%;
+  height: 20rem;
+  font-size: medium;
+  padding: 2rem;
+}
+/* File input */
+.picInput {
+  display: none;
+  cursor: pointer;
+}
+.picIn {
+  width: 50%;
+  display: flex;
+  gap: 5%;
+}
+.file {
+  background: gray;
+  padding: 0.8rem;
+  color: whitesmoke;
+  font-family: var(--fontJosefin);
+  border-radius: .3rem;
+  text-transform: uppercase;
+  width: 100%;
+}
+.file i {
+  padding-left: 1rem;
+  font-size: medium;
+}
+.picIn label {
+  font-size: large;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.itemInputs div input:focus,
+textarea:focus {
+  outline: none !important;
+  border: 0.1rem solid var(--primary);
+}
+.submitNewItem {
+  width: 100%;
+}
+/* Hover effect */
+.file:hover,
+.submitNewItem:hover {
+  background: black;
+}

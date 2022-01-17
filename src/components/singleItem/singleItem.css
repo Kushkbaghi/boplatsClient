@@ -1,0 +1,69 @@
+.singleInfo {
+  flex-direction: column;
+}
+.itemCreator {
+  text-align: left;
+  width: 100%;
+}
+.singleInfo p,
+strong {
+  font-size: medium;
+  font-family: var(--fomntVarela);
+}
+.itemCreator {
+  color: gray;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.singleItem {
+  padding-top: 10rem !important;
+  z-index: 3;
+  background-color: whitesmoke !important;
+}
+.itemCreator .creator {
+  width: 100%;
+  text-align: left;
+}
+.itemCreator .date {
+  width: 100%;
+  text-align: right;
+}
+.navLeft {
+  z-index: 1;
+  background-color: white;
+}
+.textAreaX {
+  width: 100% !important;
+  padding: 3rem;
+  margin: 2rem auto;
+}
+/* Element for just the admin*/
+.adminTools {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 0.5rem;
+}
+.updateX {
+  height: 3rem;
+  margin: 2rem 1rem;
+  font-size: large;
+}
+.adminTools > *,
+.adminTools > * > * {
+  font-size: var(--fontSizeH5);
+}
+.trash {
+  color: var(--danger);
+}
+.trash .edit {
+  color: var(--primary);
+}
+.itemInfo {
+  width: 100%;
+  text-align: left;
+  color: var(--dark3F);
+  padding-top: 1rem;
+}

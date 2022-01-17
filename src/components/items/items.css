@@ -1,0 +1,15 @@
+.items, .itemWidth{
+    flex: 6;
+    border: 0.1rem solid var(--dark4);
+    border-bottom-right-radius: 1rem;
+    box-shadow: var(--shadowBox);
+    padding: 3rem;
+}
+.items h2{
+  font-size: var(--fontSizeH2);
+  font-family: var(--fontJosefin);
+  color: var(--dark3);
+  padding: 2rem 1%;
+  margin-bottom: 3rem;
+  border-left: 0.5rem #881278d3 solid;
+}

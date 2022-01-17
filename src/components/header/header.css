@@ -1,0 +1,9 @@
+header {
+    position: sticky;
+    top: 0;
+    font-family: var(--font-family-normal);
+    height: 6.5rem;
+    display: flex;
+    max-width: 96rem;
+  
+  }

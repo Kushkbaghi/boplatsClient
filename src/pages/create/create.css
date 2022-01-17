@@ -1,0 +1,12 @@
+.formTitle{
+    position: absolute;
+    width: 50%;
+    top: 20%;
+    left: 0;
+    right: 0;
+    font-size: var(--fontSizeH1);
+    color: var(--dark3);
+    text-align: center;
+    padding: 5rem 0%;
+    background-color: whitesmoke;
+}

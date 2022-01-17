@@ -1,0 +1,65 @@
+.accontForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: left !important;
+  width: 100%;
+  margin-top: 20rem;
+  padding: 6rem;
+  border: 0.1rem solid var(--light3);
+  box-shadow: var(--shadowBox);
+}
+/* Image update */
+.accontImg {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.accontImg img {
+  width: 6rem;
+  height: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.accontImg label {
+  font-size: large;
+  color: gray;
+}
+
+.accontImgUpdate {
+  width: 30%;
+  margin: 3rem auto;
+}
+
+/* Lable and inputs */
+.accontForm > label {
+  font-size: medium;
+  text-align: left;
+  width: 50%;
+  padding: 1rem 0%;
+}
+.accontForm > input {
+  font-size: medium;
+  width: 50%;
+  padding: 0.8rem;
+  border: none;
+  border-radius: .5rem;
+  background-color: var(--light2);
+}
+/* Buttons */
+.updatePicBtn{
+    width: 50%;
+    padding: .1rem !important;
+}
+.btnUp{
+    width: 50%;
+    display: flex;
+    justify-content: left;
+
+}
+.updateBtn{
+   
+    margin-top: 2rem;
+    width: 100%;
+}
