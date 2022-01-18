@@ -3,7 +3,7 @@ import axios from "axios";
 import { useRef, useContext } from "react";
 import { AdminContext } from "../../Context/LoginContext";
 
-const baseUrl = "http://localhost:3000/server/check/";
+const baseUrl = "http://localhost:3000/check/";
 
 export default function LoginForm() {
   // Create useRef hook to get data from form

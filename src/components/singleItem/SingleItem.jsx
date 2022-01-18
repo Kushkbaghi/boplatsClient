@@ -6,7 +6,7 @@ import axios  from "axios";
 
 // URL from sever
 const imageUrl = "http://localhost:3000/images/";
-const baseUrl = "http://localhost:3000/server/";
+const baseUrl = "http://localhost:3000/";
 
 // Conver URLK as an object and declare items id via useLocation
 export default function AnItem() {

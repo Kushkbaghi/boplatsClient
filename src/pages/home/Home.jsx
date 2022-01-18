@@ -7,7 +7,7 @@ import Header from "../../components/header/Header";
 
 import "./home.css";
 import axios from "axios";
-const baseUrl = 'http://localhost:3000/server/';
+const baseUrl = 'http://localhost:3000/';
 
 
 export default function Home() {
