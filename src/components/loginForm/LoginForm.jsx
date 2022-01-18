@@ -23,7 +23,8 @@ export default function LoginForm() {
       });
       // EVENT/ACTION login is success send admins data as param ro reducer
       dispatch({ type: "success", payload: res.data });
-      console.log(res.data);
+      
+      
     } catch (e) {
       // EVENT/ACTION login is NOT success send it to reducer
       dispatch({ type: "wrong" });

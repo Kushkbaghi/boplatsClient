@@ -3,20 +3,23 @@
   flex-direction: column;
   justify-content: left !important;
   width: 100%;
-  margin-top: 20rem;
   padding: 6rem;
   border: 0.1rem solid var(--light3);
   box-shadow: var(--shadowBox);
 }
 .accontForm {
-  max-width: 96rem;
+ 
   margin-bottom: 10rem;
+  margin-top:30rem !important;
+
 }
 .accontImgUpdate {
   width: 30%;
   margin: 3rem auto;
 }
-
+.login{
+  background-color: rebeccapurple !important;
+}
 /* Lable and inputs */
 .accontForm > label {
   font-size: medium;

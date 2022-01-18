@@ -37,6 +37,7 @@ strong {
   width: 100% !important;
   padding: 3rem;
   margin: 2rem auto;
+  font-size: medium;
 }
 /* Element for just the admin*/
 .adminTools {

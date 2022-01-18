@@ -2,20 +2,24 @@ import "./singleItem.css";
 import { useLocation } from "react-router-dom";
 import { useEffect, useState, useContext } from "react";
 import { AdminContext } from "../../Context/LoginContext";
-import axios from "axios";
+import axios  from "axios";
+
+// URL from sever
+const imageUrl = "http://localhost:3000/images/";
 const baseUrl = "http://localhost:3000/server/";
 
 // Conver URLK as an object and declare items id via useLocation
 export default function AnItem() {
+  
+
+  // If admin is login
+  const { admin, dispatch } = useContext(AdminContext);
+  // {
+  //   admin ? (setadmin(true)) : (setadmin(false));
+  // }
+
   // useSata to update item
   const [item, setItem] = useState({});
-
-  // If admin will to edite the item
-  const [toEdit, setToEdit] = useState(true);
-
-  // Make context data accessible
-  // Check admins if is logged in
-  const { admin, dispatch } = useContext(AdminContext);
   // Create useState för the items
   const [adminName, setAdmin] = useState("");
   const [address, setAddress] = useState("");
@@ -29,9 +33,6 @@ export default function AnItem() {
   const [lastDay, setLastDay] = useState();
   const [moveDate, setMoveDate] = useState();
   const [lastUpdate, setLastUpdate] = useState();
-
-  // URL from sever
-  const imageUrl = "http://localhost:3000/images/";
 
   const location = useLocation();
   // Id place is i the second place of pathman key
@@ -54,10 +55,11 @@ export default function AnItem() {
       setLastDay(res.data.lastDay);
       setMoveDate(res.data.moveDate);
       setLastUpdate(res.data.lastUpdate);
+     
     };
+    
     getThePost();
   }, [itemId]);
-  console.log(room);
 
   // Delete item
   const deleteAnItem = async () => {
@@ -80,14 +82,15 @@ export default function AnItem() {
         room,
         area,
       });
-      window.location.reload();
-      setToEdit(false);
+      window.location.replace(`/`);
     } catch (error) {}
-    console.log(area);
+    console.log(item);
   };
   return (
     <article className="singleItem itemWidth item">
       <div className="itemImg">
+
+        {/* IMAGE */}
         <img src={imageUrl + item.image} alt="" />
       </div>
       <div className="itemTitle">
@@ -96,13 +99,7 @@ export default function AnItem() {
         {/* If admin is login show edit and delete function */}
         {admin && (
           <div className="adminTools">
-            <a href="">
-              {/* Edit the item */}
-              <i onClick={() => setToEdit(true)} className="fas edit">
-                
-              </i>
-            </a>
-            <p>|</p>
+            {/*  */}
             <a href="">
               {/* Delete the item */}
               <i onClick={deleteAnItem} className="fas trash">
@@ -125,7 +122,7 @@ export default function AnItem() {
         </div>
         <div className="itemTitle">
           {/* TO EDITE */}
-          {toEdit ? (
+          {admin ? (
             <input
               onChange={(e) => setAddress(e.target.value)}
               type="text"
@@ -136,7 +133,7 @@ export default function AnItem() {
             <h4 className="title">{item.address}</h4>
           )}
           {/* TO EDITE */}
-          {toEdit ? (
+          {admin ? (
             <input
               onChange={(e) => setTown(e.target.value)}
               type="text"
@@ -155,7 +152,7 @@ export default function AnItem() {
         <div className="itemInfo floor">
           <strong className="strong">VÅN</strong>
           {/* TO EDITE */}
-          {toEdit ? (
+          {admin ? (
             <input
               onChange={(e) => setFloor(e.target.value)}
               type="number"
@@ -168,7 +165,7 @@ export default function AnItem() {
         <div className="itemInfo floor">
           <strong className="strong">HYRA</strong>
           {/* TO EDITE */}
-          {toEdit ? (
+          {admin ? (
             <input
               onChange={(e) => setRent(e.target.value)}
               type="number"
@@ -181,7 +178,7 @@ export default function AnItem() {
         <div className="itemInfo room">
           <strong className="strong">RUM</strong>
           {/* TO EDITE */}
-          {toEdit ? (
+          {admin ? (
             <input
               onChange={(e) => setRoom(e.target.value)}
               type="number"
@@ -194,7 +191,7 @@ export default function AnItem() {
         <div className="itemInfo area">
           <strong className="strong">YTA</strong>
           {/* TO EDITE */}
-          {toEdit ? (
+          {admin ? (
             <input
               onChange={(e) => setArea(e.target.value)}
               type="number"
@@ -205,7 +202,7 @@ export default function AnItem() {
           )}
         </div>
 
-        {toEdit ? (
+        {admin ? (
           <textarea
             placeholder="Information om lägenheten..."
             className="textArea textAreaX"
@@ -220,7 +217,7 @@ export default function AnItem() {
         )}
       </div>
       {/* TO EDITE */}
-      {toEdit ? (
+      {admin ? (
         <button onClick={toUpdate} className="itemAccept bgGreen btn">
           {" "}
           Uppdatera

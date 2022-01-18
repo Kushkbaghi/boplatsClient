@@ -87,8 +87,12 @@ textarea:focus {
   outline: none !important;
   border: 0.1rem solid var(--primary);
 }
-.submitNewItem {
+.submitNewItem, .file {
   width: 100%;
+  height:5rem !important;
+  text-align: center;
+  display: inline-block;
+  
 }
 /* Hover effect */
 .file:hover,

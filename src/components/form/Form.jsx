@@ -4,7 +4,7 @@ import { AdminContext } from "../../Context/LoginContext";
 import axios from "axios";
 
 const baseUrl = "http://localhost:3000/server/";
-const clientUrl = "http://localhost:3001/";
+const clientUrl = "https://musing-bhaskara-fac73f.netlify.app/";
 
 // Form for input about every item
 export default function Form() {
@@ -37,6 +37,7 @@ export default function Form() {
       lastDay,
       file,
       moveDate,
+      
     };
     // If there is any file/image
     if (file) {
@@ -47,21 +48,23 @@ export default function Form() {
       data.append("name", filename);
       data.append("file", file);
       setNewItem.image = filename;
-      console.log(data.name)
+
       try {
         // Upload the file
         await axios.post(`${baseUrl}file`, data);
-        console.log("GET WRONG")
+     
       } catch (error) {}
       try {
         // Upload new Item
         const res = await axios.post(`${baseUrl}items/`, setNewItem);
 
+        console.log("sdfhsdfhsdfhgsdfh");
         // After uploading show the items
-        window.location.replace(`${clientUrl}item/${res.data._id}`);
+        window.location.replace(`/`);
+        
       } catch (error) {}
     }
-    console.log(setNewItem)
+  
   };
   return (
     <form
@@ -72,7 +75,7 @@ export default function Form() {
     >
       {/* Input list  */}
       <div className="itemInputs">
-      <div>
+      <div> 
           <label htmlFor="address ">Adress</label>
           <input onChange={(e) =>setAddress(e.target.value)} required type="text" name="address" id="address" />
           <label htmlFor="town">Stad</label>
@@ -119,7 +122,6 @@ export default function Form() {
         <div className="file">
           <label htmlFor="picInItem">
             Lägg till en Bild
-            <i className="fas file"> </i>
           </label>
           <input
             required

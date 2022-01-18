@@ -17,16 +17,18 @@ export default function RegisterForm() {
     setConectionError(false);
     // Send body info throght post
     try {
-      const res = await axios.post(`${baseUrl}registrera`, {
+      const res = await axios.post(`${baseUrl}register`, {
         name,
         password,
         email,
       });
+      
       // If connection is successful sen user to login page
       if (res.data) {
-        window.location.replace(`/loggain`);
+        window.location.replace("/login/");
       }
     } catch (error) {
+      console.log(name + "00" + password + "---" + email);
       setConectionError(true);
     }
   };
