@@ -2,16 +2,14 @@ import "./singleItem.css";
 import { useLocation } from "react-router-dom";
 import { useEffect, useState, useContext } from "react";
 import { AdminContext } from "../../Context/LoginContext";
-import axios  from "axios";
+import axios from "axios";
 
 // URL from sever
-const imageUrl = "http://localhost:3000/images/";
-const baseUrl = "http://localhost:3000/";
+const imageUrl = "https://boplats.herokuapp.com/images/";
+const baseUrl = "https://boplats.herokuapp.com/";
 
 // Conver URLK as an object and declare items id via useLocation
 export default function AnItem() {
-  
-
   // If admin is login
   const { admin, dispatch } = useContext(AdminContext);
   // {
@@ -55,9 +53,8 @@ export default function AnItem() {
       setLastDay(res.data.lastDay);
       setMoveDate(res.data.moveDate);
       setLastUpdate(res.data.lastUpdate);
-     
     };
-    
+
     getThePost();
   }, [itemId]);
 
@@ -66,6 +63,7 @@ export default function AnItem() {
     try {
       await axios.delete(`${baseUrl}items/${itemId}`);
       window.location.replace(`/`);
+
     } catch (error) {}
   };
 
@@ -89,7 +87,6 @@ export default function AnItem() {
   return (
     <article className="singleItem itemWidth item">
       <div className="itemImg">
-
         {/* IMAGE */}
         <img src={imageUrl + item.image} alt="" />
       </div>
@@ -100,7 +97,7 @@ export default function AnItem() {
         {admin && (
           <div className="adminTools">
             {/*  */}
-            <a href="">
+            <a >
               {/* Delete the item */}
               <i onClick={deleteAnItem} className="fas trash">
                 

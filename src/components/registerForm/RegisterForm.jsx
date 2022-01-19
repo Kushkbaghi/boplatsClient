@@ -2,7 +2,7 @@ import "./registerForm.css";
 import React from "react";
 import { useState } from "react";
 import axios from "axios";
-const baseUrl = "http://localhost:3000/server/check/";
+const baseUrl = "https://boplats.herokuapp.com/check/";
 
 export default function RegisterForm() {
   // UseSate to update the value
@@ -25,7 +25,7 @@ export default function RegisterForm() {
       
       // If connection is successful sen user to login page
       if (res.data) {
-        window.location.replace("/login/");
+        window.location.replace("/");
       }
     } catch (error) {
       console.log(name + "00" + password + "---" + email);

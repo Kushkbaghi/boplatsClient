@@ -3,7 +3,7 @@ import "./item.css";
 
 export default function Item({ theItem }) {
   // URL from sever
-  const imageUrl = "http://localhost:3000/images/";
+  const imageUrl = "https://boplats.herokuapp.com/images/";
 
   console.log(imageUrl + theItem.image);
   return (

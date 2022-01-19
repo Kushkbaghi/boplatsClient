@@ -58,6 +58,7 @@ strong {
 }
 .trash {
   color: var(--danger);
+  cursor: pointer;
 }
 .trash .edit {
   color: var(--primary);

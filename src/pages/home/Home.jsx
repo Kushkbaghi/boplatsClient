@@ -7,7 +7,7 @@ import Header from "../../components/header/Header";
 
 import "./home.css";
 import axios from "axios";
-const baseUrl = 'http://localhost:3000/';
+const baseUrl = 'https://boplats.herokuapp.com/';
 
 
 export default function Home() {

@@ -3,7 +3,7 @@ import axios from "axios";
 import { useRef, useContext } from "react";
 import { AdminContext } from "../../Context/LoginContext";
 
-const baseUrl = "http://localhost:3000/check/";
+const baseUrl = "https://boplats.herokuapp.com/check/";
 
 export default function LoginForm() {
   // Create useRef hook to get data from form

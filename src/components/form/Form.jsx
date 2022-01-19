@@ -3,7 +3,7 @@ import { useEffect, useState, useContext } from "react";
 import { AdminContext } from "../../Context/LoginContext";
 import axios from "axios";
 
-const baseUrl = "http://localhost:3000/server/";
+const baseUrl = "https://boplats.herokuapp.com/";
 const clientUrl = "https://musing-bhaskara-fac73f.netlify.app/";
 
 // Form for input about every item
@@ -57,8 +57,6 @@ export default function Form() {
       try {
         // Upload new Item
         const res = await axios.post(`${baseUrl}items/`, setNewItem);
-
-        console.log("sdfhsdfhsdfhgsdfh");
         // After uploading show the items
         window.location.replace(`/`);
         
